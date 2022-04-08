@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://drive.grmine.cn/blog/</id>
     <title>GrMine</title>
-    <updated>2022-04-06T08:21:09.923Z</updated>
+    <updated>2022-04-08T08:22:08.736Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://drive.grmine.cn/blog/"/>
     <link rel="self" href="http://drive.grmine.cn/blog/atom.xml"/>
@@ -37,6 +37,11 @@
 <td>**阳</td>
 <td>100</td>
 <td>2022-04-02</td>
+</tr>
+<tr>
+<td>本(QQ)</td>
+<td>10</td>
+<td>2022-04-28</td>
 </tr>
 <tr>
 <td>*梦</td>
