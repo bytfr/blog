@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.grmine.cn</id>
     <title>GrMine</title>
-    <updated>2022-04-17T02:32:11.088Z</updated>
+    <updated>2022-04-20T12:26:57.694Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.grmine.cn"/>
     <link rel="self" href="https://blog.grmine.cn/atom.xml"/>
@@ -143,11 +143,21 @@
 </li>
 <li>
 <p>2022/4/1</p>
-<p>愚人节快乐(<strong><sup>▽</sup></strong>)</p>
+<p>愚人节快乐(<strong>▽</strong>)</p>
 </li>
 <li>
 <p>2022/3/29</p>
 <p>加入公告插件</p>
+</li>
+</ul>
+<h3 id="关于codename-cure的一些bug">关于Codename CURE的一些bug</h3>
+<ul>
+<li>投票闪退
+<ul>
+<li>在中文简体语言游戏中，在地图或等级投票的时候，容易发生闪退的问题</li>
+<li>解决办法:</li>
+<li>将游戏语言调为英文暂时解决，已经联系到开发者努力解决中</li>
+</ul>
 </li>
 </ul>
 ]]></content>
