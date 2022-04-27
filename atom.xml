@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.grmine.cn</id>
     <title>GrMine</title>
-    <updated>2022-04-27T13:50:08.523Z</updated>
+    <updated>2022-04-27T13:50:43.082Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.grmine.cn"/>
     <link rel="self" href="https://blog.grmine.cn/atom.xml"/>
@@ -119,8 +119,7 @@
         <link href="https://blog.grmine.cn/post/codename-cure-fu-wu-qi-lie-biao/">
         </link>
         <updated>2022-04-02T12:51:16.000Z</updated>
-        <content type="html"><![CDATA[<p>2022-04-27</p>
-<iframe src="http://drive.grmine.cn/getserver.html" style="width: 100%;height: auto;"></iframe>
+        <content type="html"><![CDATA[<iframe src="http://drive.grmine.cn/getserver.html" style="width: 100%;height: auto;"></iframe>
 <h3 id="更新列表">更新列表</h3>
 <ul>
 <li>
