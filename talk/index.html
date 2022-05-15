@@ -2,190 +2,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="
-
-
-服务器名字
-IP
-最大玩家数
-备注
-
-
-
-
-wdnmd1|QQ:744759597
-110.42.148.82:27015
-5
-只有官图
-
-
-wdnmd2|QQ:744759597|添加了地图
-43.138.213.15:27015
-..." />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="https://blog.grmine.cn/media/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://blog.grmine.cn/styles/main.css">
-    <!-- 代码渲染风格css -->
-    
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css">
-    
-    <!-- 代码高亮插件 -->
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
-    <!-- 代码复制插件 -->
-    <script src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/clipboard.min.js"></script>
-    <!-- live2d插件 -->
-    <link rel="stylesheet" href="https://blog.grmine.cn/media/css/live2d.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
-    <!-- 数学公式 -->
-    
-    <title>Codename CURE 服务器信息</title>
-
-    <!-- 大纲索引css调整 -->
-    
-    <style>
-        .markdownIt-TOC {
-            margin-left: 28%;
-            padding-left: 2px;
-            width: 80%;
-        }
-
-        .markdownIt-TOC li {
-            padding-left: 8%;
-        }
-    </style>
-    
+    <link rel="stylesheet" href="https://blog.grmine.cn/media/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://blog.grmine.cn/media/css/live2d.css">
+    <meta name="description" content="Blog" />
+    <link rel="stylesheet" href="https://blog.grmine.cn/styles/main.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>GrMine-说说</title>
 </head>
 
 <body>
-    <div id="landlord">
-        <div class="message" style="opacity:0"></div>
-        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
-    </div>
-    <div id="domainname" style="display:none">https://blog.grmine.cn</div>
     <div id="content">
-        <div>
-            <!----------- 移动端导航栏👇 ----------------->
-            <div id="bar">
-                <style>
-  .navmobile {
-    z-index: 15;
-    max-height: 40vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
-
-  @media screen and (max-width: 1200px) {
-    .navbar {
-      max-width: 100vw;
-    }
-  }
-
-  @media screen and (max-width:1200px) and (min-width: 768px) {
-    @media (min-width: 768px) {
-      .navbar-nav {
-        float: right;
-        margin: 0;
-      }
-    }
-  }
-
-  @media screen and (max-width:768px) {
-    .mbapspan {
-      padding: 0;
-    }
-  }
-</style>
-<div class="pjaxloading"  onclick="pjaxloadingClose()">
-  <div class="loadingbackground"></div>
-  <div id="loading">
-    <div class="loading">
-    </div>
-  </div>
-</div>
-<nav class="navbar navbar-inverse navbar-fixed-top navmobile">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barmenu"
-        aria-expanded="false" id="barbutton">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a data-pjax class="navbar-brand" style="color:white" href="https://blog.grmine.cn">GrMine&nbsp;&nbsp;|</a>
-      <span class="navbar-brand mbapspan"><i id="mbaplayer" class="fa fa-play-circle-o" aria-hidden="true"
-          style="font-size: 28px;top: 12px;position: absolute;" onclick="aplayerPlay();"></i></span>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="barmenu">
-      <ul class="nav navbar-nav">
-        
-        
-        <li>
-          <a data-pjax href="/" style="color:white">
-            首页
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a data-pjax href="https://blog.grmine.cn/post/zan-zhu" style="color:white">
-            赞助
-          </a>
-        </li>
-        
-        
-        
-        
-          
-        <li><a data-pjax href="https://blog.grmine.cn/friends" style="color:white">友链</a></li>
-
-        
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-
-
-  <!-- 引入jQuery核心js文件 -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-  <script>
-    let btstate = false;
-    var bt = $("#barbutton");
-    var bm = $("#barmenu");
-    bt.click(function () {
-      dropdown();
-    })
-    function dropdown() {
-      console.log(btstate);
-      //下拉
-      if (btstate == false) {
-        bt.removeClass("collapsed");
-        bt.attr("aria-expanded", "true");
-        bm.attr("aria-expanded", "true")
-        bm.fadeIn(700);
-        btstate = true;
-      }
-      else {
-        bt.addClass("collapsed");
-        bt.attr("aria-expanded", "false");
-        bm.removeClass("in");
-        bm.hide();
-        bm.attr("aria-expanded", "false");
-        btstate = false;
-      }
-    }
-  </script> 
-            </div>
-            <!----------- 移动端导航栏👆 ----------------->
-
-            <!--------------- pc端菜单栏👇 ---------------->
-            <div class="side"><head>
+        <div class="nav-large">
+            <div class="row">
+                <!--------------- pc端菜单栏👇 ---------------->
+                <div class="side"><head>
     <link rel="stylesheet" href="https://blog.grmine.cn/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://blog.grmine.cn/styles/main.css">
     
@@ -948,252 +781,201 @@ menulist.eq(i).show();
     }
 </script>
 <!----夜间模式👆--></div>
-            <!--------------- pc端菜单栏👆 ---------------->
+                <!--------------- pc端菜单栏👆 ---------------->
 
-            <!-- ----------------左侧菜单栏html 👇-------------------------------------->
-            
-            <div>
-                <div id="tab1" class="tab">
-                    <div class="bars">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <div class="close"></div>
+                <!----------- 移动端导航栏👇 ----------------->
+                <div class="tbar"> <style>
+  .navmobile {
+    z-index: 15;
+    max-height: 40vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .navbar {
+      max-width: 100vw;
+    }
+  }
+
+  @media screen and (max-width:1200px) and (min-width: 768px) {
+    @media (min-width: 768px) {
+      .navbar-nav {
+        float: right;
+        margin: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width:768px) {
+    .mbapspan {
+      padding: 0;
+    }
+  }
+</style>
+<div class="pjaxloading"  onclick="pjaxloadingClose()">
+  <div class="loadingbackground"></div>
+  <div id="loading">
+    <div class="loading">
+    </div>
+  </div>
+</div>
+<nav class="navbar navbar-inverse navbar-fixed-top navmobile">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barmenu"
+        aria-expanded="false" id="barbutton">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a data-pjax class="navbar-brand" style="color:white" href="https://blog.grmine.cn">GrMine&nbsp;&nbsp;|</a>
+      <span class="navbar-brand mbapspan"><i id="mbaplayer" class="fa fa-play-circle-o" aria-hidden="true"
+          style="font-size: 28px;top: 12px;position: absolute;" onclick="aplayerPlay();"></i></span>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="barmenu">
+      <ul class="nav navbar-nav">
+        
+        
+        <li>
+          <a data-pjax href="/" style="color:white">
+            首页
+          </a>
+        </li>
+        
+        
+        
+        <li>
+          <a data-pjax href="https://blog.grmine.cn/post/zan-zhu" style="color:white">
+            赞助
+          </a>
+        </li>
+        
+        
+        
+        
+          
+        <li><a data-pjax href="https://blog.grmine.cn/friends" style="color:white">友链</a></li>
+
+        
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+  <!-- 引入jQuery核心js文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+  <script>
+    let btstate = false;
+    var bt = $("#barbutton");
+    var bm = $("#barmenu");
+    bt.click(function () {
+      dropdown();
+    })
+    function dropdown() {
+      console.log(btstate);
+      //下拉
+      if (btstate == false) {
+        bt.removeClass("collapsed");
+        bt.attr("aria-expanded", "true");
+        bm.attr("aria-expanded", "true")
+        bm.fadeIn(700);
+        btstate = true;
+      }
+      else {
+        bt.addClass("collapsed");
+        bt.attr("aria-expanded", "false");
+        bm.removeClass("in");
+        bm.hide();
+        bm.attr("aria-expanded", "false");
+        btstate = false;
+      }
+    }
+  </script> 
+                <!----------- 移动端导航栏👆 ----------------->
                 </div>
+
+                <!-- ----------------左侧菜单栏html 👇-------------------------------------->
+                
+                    <div id="tab1" class="tab">
+                        <div class="bars">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="close"></div>
+                    </div>
                 <div class="col-md-1 col-lg-3"></div>
-                <!-- main标签，pjax渲染时加载以下内容👇 -->
-                <div id="main" class="col-xs-12 col-sm-12 col-md-12 col-lg-7" style="padding:0;">
-                    <div class="readingmode" onclick="readingmode()">阅</div>
-                    <link rel="stylesheet" href="https://blog.grmine.cn/media/css/font-awesome.css">
-
-<body>
-    <div class="allcontent" id="postdetail">
-        <div class="postshow postpadding" style="padding-bottom: 0;">
-            
-            <div class="postdetailimg">
-                
-                <img src="/media/images/custom-postdefaultimage.png" class="postimage">
-                
-            </div>
-            <div class="postinfo-detail">
-                <div class="postdate"><i class="fa fa-calendar"></i>2022-04-02</div>
-            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
-            <div class="posttag">
-                
-            </div>
-        </div>
-        
-        <div id="articlecontent">
-            <div id="texttitle" style="text-align: center">
-                <h2 id="ptitle">Codename CURE 服务器信息</h2>
-                <!-- id 将作为查询条件 -->
-                <div id="pl" style="display:none">https://blog.grmine.cn/post/codename-cure-fu-wu-qi-lie-biao/</div>
-                <div id="rootaddr" style="display:none">https://blog.grmine.cn</div>
-                
-            </div>
-            <div class="text ">
-                <table>
-<thead>
-<tr>
-<th>服务器名字</th>
-<th>IP</th>
-<th>最大玩家数</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>wdnmd1|QQ:744759597</td>
-<td>110.42.148.82:27015</td>
-<td>5</td>
-<td>只有官图</td>
-</tr>
-<tr>
-<td>wdnmd2|QQ:744759597|添加了地图</td>
-<td>43.138.213.15:27015</td>
-<td>5</td>
-<td>添加了其他地图</td>
-</tr>
-</tbody>
-</table>
-<h3 id="更新列表">更新列表</h3>
-<ul>
-<li>
-<p>2022/4/3</p>
-<p>加入了&quot;死亡消息&quot;插件</p>
-</li>
-<li>
-<p>2022/4/1</p>
-<p>愚人节快乐(<strong>▽</strong>)</p>
-</li>
-<li>
-<p>2022/3/29</p>
-<p>加入公告插件</p>
-</li>
-</ul>
-<h3 id="关于codename-cure的一些bug">关于Codename CURE的一些bug</h3>
-<ul>
-<li><strong>投票闪退</strong>
-<ul>
-<li>在中文简体语言游戏中，在地图或等级投票的时候，容易发生闪退的问题</li>
-<li><strong>解决办法</strong>:</li>
-<li>开发者也在新版本解决</li>
-</ul>
-</li>
-</ul>
-
-            </div>
-            <hr style="width: 80%;">
-            
-            <div class="postfooter">
-                <ul class="post-copyright">
-                    <li><strong>文章作者：</strong></li>
-            <li><strong>原文链接：</strong>https://blog.grmine.cn/post/codename-cure-fu-wu-qi-lie-biao/</li>
-            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
-                许可协议。转载请注明出处！</li>
-            </ul>
-        </div>
-        
-        <div id="otherpost">
-            
-            <a  data-pjax class="prev-post-pc" href="https://blog.grmine.cn/post/zan-zhu/"  style="color: black;">
-                <div id="ppcontainer">
-                    
-                    
-                    <img src="/media/images/custom-postdefaultimage.png" style="width: 100%;" class="opimg">
-                    
-                    
-                    <h4 class="optitle">赞助</h4>
-                </div>
-            </a>
-            <div class="prev-post">
-                上一篇 <a  data-pjax href="https://blog.grmine.cn/post/zan-zhu/">赞助</a>
-            </div>
-            
-            
-        </div>
-    </div>
-    </div>
-    </div>
-    <!-- 弹窗 -->
-    <div id="myModal" class="modal">
-        <img class="modal-content" id="img01">
-    </div>
-</body>
+                <div id="main" class="col-xs-12 col-sm-12 col-md-12 col-lg-7" style="z-index: 11;">
+                    <div class="mobilebar">
+                        <img src="" alt="" class="plbg">
 <script>
-    //文章阅读热度
-    var pl = $("#pl").html();
-    var rootaddr = $("#rootaddr").html();
-    pl = pl.replace(rootaddr, "");
-    $("#hotnum").attr('id', pl);
+    var bgchoice = "default";
+    if(bgchoice=='default')
+        var plbgurl = "/media/images/custom-mobilebg.jpg"
+    else  
+        var plbgurl = ""
+    $(".plbg").attr("src",plbgurl);
+    $(".plbg").fadeIn(200);
 </script>
-                    <div class="toc-container">
-                        <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#%E6%9B%B4%E6%96%B0%E5%88%97%E8%A1%A8">更新列表</a></li>
-<li><a href="#%E5%85%B3%E4%BA%8Ecodename-cure%E7%9A%84%E4%B8%80%E4%BA%9Bbug">关于Codename CURE的一些bug</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
                     </div>
-                    <div class="tog">
-                        <div class="toggleContainer">
-                            <div class="toggle">
-                                <i class="fas fa-angle-double-up"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!---------------------------- 评论系统👇 ------------------------->
-                    <div id="comment" class="comment">
-                        <div class="commentcontainer">
-                            
-                                
-                            
-                        </div>
-                    </div>
-                    <!---------------------------- 评论系统👆 ------------------------->
+                    <div id="talks">
+    <div id="talkContainer">
+    </div>
+    <button id="getmorebt" type="button" onclick="add()">获取更多</button>
+</div>
+<!-- 弹窗 -->
+<div id="myModal" class="modal">
+    <img class="modal-content" id="img01">
+</div>
                 </div>
-                <!-- main标签，pjax渲染时加载以上内容👆 -->
                 <div class="col-md-1 col-lg-2"></div>
-                <div id="bg">
-                </div>
+                <!-- ----------------左侧菜单栏html 👆-------------------------------------->
+                
+                <!--------------- 顶部菜单栏html👇--------->
+                
+                <!--------------- 顶部菜单栏html👆--------->
             </div>
-            <!-- ----------------左侧菜单栏html 👆-------------------------------------->
+            <!-- aplayer播放器加载👇 -->
             
+            <!-- aplayer播放器加载👆 -->
         </div>
-        <!-- aplayer播放器加载👇 -->
+        <div id="bg">
+        </div>
+        <!-- 背景图加载方式👇 -->
+        <div id="bgchoice" style="display: none">default
+            </div>
             
-        <!-- aplayer播放器加载👆 -->
+            <div id="bgurl" style="display:none">\media\images\custom-bgimage.jpeg</div>
+               
+        <!-- 背景图加载方式👆 -->
     </div>
-    <!-- 背景图加载方式👇 -->
-    <div id="bgchoice" style="display: none">default
-                </div>
-                
-                <div id="bgurl" style="display:none">\media\images\custom-bgimage.jpeg</div>
-                
-    <!-- 背景图加载方式👆 -->
+    
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+    </div>
+    <div id="domainname" style="display:none">https://blog.grmine.cn</div>
 </body>
 
-<script>
-    //初始化
-    //更换twikoo头像
-    setTimeout(replaceAvatar,1000);
-    setTimeout(replaceAvatar,2000);
-    setTimeout(replaceAvatar,8000);
-    // --------为每张图片添加懒加载（lazyload）标签-->懒加载功能 👇------------
-    lazyload();
-    //为文章内所有代码块添加代码复制功能 👇
-    codeinit();
-    // ------代码高亮显示功能-------------
-    hljs.initHighlightingOnLoad();
-    if (shareChoice)
-        shareInit();
-    if (donateChoice)
-        donateInit();
-</script>
+<!-------------------- live2d功能👇 --------------------------->
 
-<!------------------ 加载live2d模型功能（看板娘）👇 ---------------->
+    <script type="text/javascript">
+        var message_Path = '/live2d/'
+        var home_Path = document.getElementById("domainname").innerHTML+"/"; //此处修改为你的域名，必须带斜杠
+    </script>
+    <script type="text/javascript" src="https://blog.grmine.cn/media/js/live2d.js"></script>
+    <script type="text/javascript" src="https://blog.grmine.cn/media/live2d/js/message.js"></script>
+    <script type="text/javascript">
+            loadlive2d("live2d", "https://blog.grmine.cn/media/live2d/assets/tororo.model.json");
+    </script>
 
-<script type="text/javascript">
-    var message_Path = '/live2d/'
-    var home_Path = document.getElementById("domainname").innerHTML + "/"; //此处修改为你的域名，必须带斜杠
-</script>
-<script type="text/javascript" src="https://blog.grmine.cn/media/js/live2d.js"></script>
-<script type="text/javascript" src="https://blog.grmine.cn/media/live2d/js/message.js"></script>
-<script type="text/javascript">
-    loadlive2d("live2d", "https://blog.grmine.cn/media/live2d/assets/tororo.model.json");
-</script>
-
-<!------------------ 加载live2d模型功能（看板娘）👆 ---------------->
-
-
-<!----------------------- 返回顶部按钮功能👇 --------------------->
-<script>
-    $(function () {
-        $('.toggleContainer').click(function () {
-            $('html,body').animate({
-                scrollTop: '0px'
-            }, 800);
-        });
-        $(window).scroll(function () {
-            var st = $(window).scrollTop();
-            if (st > 30) {
-                $(".toggleContainer").fadeIn(400);
-            } else {
-                $(".toggleContainer").fadeOut(100);
-            }
-        });
-    });
-</script>
-<!----------------------- 返回顶部按钮功能👆 --------------------->
-
+<!-------------------- live2d功能👆 --------------------------->
 
 <!------------ 加载全局背景图功能👇（开始时没有写好，这功能有点鸡肋/(ㄒoㄒ)/~~） -->
 <script>
@@ -1215,28 +997,16 @@ menulist.eq(i).show();
 <!------------ 加载全局背景图功能👆（开始时没有写好，这功能有点鸡肋/(ㄒoㄒ)/~~） -->
 
 
+        <script src="https://blog.grmine.cn/media/js/index.js"></script>
 
 
-<script src="https://blog.grmine.cn/media/js/index.js"></script>
-
-
+<!--------------------------- 说说功能👇------------------------- -->
 <script>
-    //加载后的事件同步（阅读量、移动端评论等
-    window.onload = function () {
-    //代码块高亮渲染
-    document.querySelectorAll('pre code').forEach((block) => {
-            hljs.highlightBlock(block);
-    });
-        getHotnum();
-        var sharepc = $(".share").eq(0).html();
-        $(".share").eq(1).html(sharepc);   //插件只会寻找一个分享标签渲染，所以需要手动添加到移动端
+
+    window.onload = function(){
         aplayerbtnInit();
-        $(".hljs").css({
-            "padding": "20px"
-        })
+        get();
+        add();
     }
 </script>
-
-<!-- <script src="https://blog.grmine.cn/media/js/av-min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3.13.0/dist/av-min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-live-query-min.js"></script> -->
+<!--------------------------- 说说功能👆------------------------- -->

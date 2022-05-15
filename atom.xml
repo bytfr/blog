@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.grmine.cn</id>
     <title>GrMine</title>
-    <updated>2022-04-27T14:18:13.194Z</updated>
+    <updated>2022-05-15T06:37:43.434Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.grmine.cn"/>
     <link rel="self" href="https://blog.grmine.cn/atom.xml"/>
@@ -119,7 +119,30 @@
         <link href="https://blog.grmine.cn/post/codename-cure-fu-wu-qi-lie-biao/">
         </link>
         <updated>2022-04-02T12:51:16.000Z</updated>
-        <content type="html"><![CDATA[<iframe src="//drive.grmine.cn/getserver.html" style="width: 100%;height: auto;"></iframe>
+        <content type="html"><![CDATA[<table>
+<thead>
+<tr>
+<th>服务器名字</th>
+<th>IP</th>
+<th>最大玩家数</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>wdnmd1|QQ:744759597</td>
+<td>110.42.148.82:27015</td>
+<td>5</td>
+<td>只有官图</td>
+</tr>
+<tr>
+<td>wdnmd2|QQ:744759597|添加了地图</td>
+<td>43.138.213.15:27015</td>
+<td>5</td>
+<td>添加了其他地图</td>
+</tr>
+</tbody>
+</table>
 <h3 id="更新列表">更新列表</h3>
 <ul>
 <li>
@@ -137,10 +160,10 @@
 </ul>
 <h3 id="关于codename-cure的一些bug">关于Codename CURE的一些bug</h3>
 <ul>
-<li>投票闪退
+<li><strong>投票闪退</strong>
 <ul>
 <li>在中文简体语言游戏中，在地图或等级投票的时候，容易发生闪退的问题</li>
-<li>解决办法:</li>
+<li><strong>解决办法</strong>:</li>
 <li>开发者也在新版本解决</li>
 </ul>
 </li>
