@@ -1,0 +1,279 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Codename CURE 服务器开设教程(Windows 篇) | GrMine - Blog</title>
+
+<link rel="shortcut icon" href="https://blog.grmine.cn/favicon.ico?v=1677247428233">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.grmine.cn/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            GrMine - Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1677247428233" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Codename CURE 服务器开设教程(Windows 篇)
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-02-19 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <h2 id="安装-codename-cure-服务端">安装 Codename CURE 服务端</h2>
+<h4 id="1-安装steamcmd">1. 安装SteamCMD</h4>
+<p>首先打开 <a href="https://developer.valvesoftware.com/wiki/SteamCMD">SteamCMD - Valve Developer Community (valvesoftware.com)</a></p>
+<p>往下滑找到&quot;Download SteamCMD for Windows&quot;</p>
+<p>点击&quot;[1]&quot;下载SteamCMD</p>
+<figure data-type="image" tabindex="1"><img src="https://download.grmine.cn/d/images/image/image-20230219173024215.png" alt="image-20230219173024215" loading="lazy"></figure>
+<p>如果下载不了可以从我的网盘下：<a href="https://download.grmine.cn/%E5%AE%89%E8%A3%85%E5%8C%85/steamcmd.zip">steamcmd.zip | GrMine - Drive</a></p>
+<p>下载好后，解压到随意路径</p>
+<p>双击打开，等待更新完成</p>
+<figure data-type="image" tabindex="2"><img src="https://download.grmine.cn/d/images/image/QQ%E6%88%AA%E5%9B%BE20230219173214.png" alt="QQ截图20230219173214" loading="lazy"></figure>
+<p>更新完成后，输入</p>
+<pre><code class="language-bash">login anonymous
+</code></pre>
+<p>出现</p>
+<pre><code class="language-bash">Connecting anonymously to Steam Public...OK
+Waiting for client config...OK
+Waiting for user info...OK
+</code></pre>
+<p>代表成功，如果没有请重试</p>
+<h4 id="2-安装游戏服务端">2. 安装游戏服务端</h4>
+<p>输入</p>
+<pre><code class="language-bash">app_update 383410 validata
+</code></pre>
+<p>下载Codename CURE 服务端，出现</p>
+<p>Success! App '383410' fully installed.</p>
+<p>代表完成</p>
+<figure data-type="image" tabindex="3"><img src="https://download.grmine.cn/d/images/image/image-20230219174433935.png" alt="image-20230219174433935" loading="lazy"></figure>
+<h4 id="3-开启服务器">3. 开启服务器</h4>
+<p>打开 SteamCMD根目录\steamapps\common\Codename CURE Dedicated Server</p>
+<p>右键srcds.exe，创建快捷方式</p>
+<figure data-type="image" tabindex="4"><img src="https://download.grmine.cn/d/images/image/image-20230219174709691.png" alt="image-20230219174709691" loading="lazy"></figure>
+<p>右键快捷方式，属性，在&quot;目标&quot;的后面加-game cure</p>
+<figure data-type="image" tabindex="5"><img src="https://download.grmine.cn/d/images/image/QQ%E6%88%AA%E5%9B%BE20230219174908.png" alt="QQ截图20230219174908" loading="lazy"></figure>
+<p>双击打开快捷方式</p>
+<figure data-type="image" tabindex="6"><img src="https://download.grmine.cn/d/images/image/QQ%E6%88%AA%E5%9B%BE20230219175806.png" alt="QQ截图20230219175806" loading="lazy"></figure>
+<p>然后点击开始服务器，让你的好友通过显示的IP地址链接就行（只在有<a href="https://baike.baidu.com/item/%E5%85%AC%E7%BD%91IP/8881123">公网IP</a>或同一网络环境下有用）</p>
+<p>如果在有公网IP环境下开设的服务器，是可以直接在游戏的服务器列表看到的</p>
+<h4 id="4-通过hlsm控制服务器可选但可以使服务器更稳定">4. 通过HLSM控制服务器（可选，但可以使服务器更稳定）</h4>
+<p>首先在 SteamCMD根目录\steamapps\common\Codename CURE Dedicated Server\cure\cfg 下创建一个文件server.cfg</p>
+<p>输入以下内容</p>
+<pre><code>hostname &quot;服务器名&quot;
+
+//局域网
+sv_lan 0
+
+//机器人数（最大3）
+bot_quota 3
+
+//友伤
+mp_friendlyfire 0
+
+//unless freindly fire is disabled there is no way to turn off the new autokick system (introduced to reduce trolling)
+//however you can alter the strikes and cooldown values (within a limited range)
+//you can also set select steamid's to be exempt from being kicked on this server via &quot;kickexemption.txt&quot;
+sv_autokick_strikes 10 //min 5, max 30
+sv_autokick_cooldown 15 //min 10, max 60
+
+//the amount of mins a player should be banned for after being kicked
+//(-1 to turn off 0 for indefinate time)
+sv_kickbantime 5
+
+//the amount of time players have to vote, once it has been called
+sv_votetime 20
+
+//the amount of time players have to wait before calling another vote
+sv_votenext 10
+
+//FastDL
+//sv_downloadurl &quot;http://43.138.213.15:4313/game&quot;
+//sv_allowupload 1
+//sv_allowdownload 1
+
+//allow voting on specific issues
+sv_allowvotekick 0
+sv_allowvotediff 1
+sv_allowvotemap 1
+
+//it is no longer recommended to set difficulty here
+//as on map change it will override any difficulty players have voted for
+
+//send info to master servers
+heartbeat
+
+sv_tags &quot;lv_mod,say_sound,many_map&quot;
+
+//可以使人数多加1个
+tv_enable 1
+tv_enable 0
+</code></pre>
+<p>然后下载HLSM</p>
+<p><a href="https://forums.alliedmods.net/showthread.php?t=147880">HLSM v2.4.1 - HL Server Monitor - AlliedModders (alliedmods.net)</a></p>
+<figure data-type="image" tabindex="7"><img src="https://download.grmine.cn/d/images/image/QQ%E6%88%AA%E5%9B%BE20230219180753.png" alt="QQ截图20230219180753" loading="lazy"></figure>
+<p>如果下载不了可以从我的网盘下：<a href="https://download.grmine.cn/%E5%AE%89%E8%A3%85%E5%8C%85/hlsm2.4.1.zip">hlsm2.4.1.zip | GrMine - Drive</a></p>
+<p>下载完成后解压到一个文件夹，双击打开hlsm.exe，右键空白地方 创建服务器</p>
+<figure data-type="image" tabindex="8"><img src="https://download.grmine.cn/d/images/image/image-20230219200010987.png" alt="image-20230219200010987" loading="lazy"></figure>
+<p>点击浏览</p>
+<figure data-type="image" tabindex="9"><img src="https://download.grmine.cn/d/images/image/image-20230219200115044.png" alt="image-20230219200115044" loading="lazy"></figure>
+<p>选择 SteamCMD根目录\steamapps\common\Codename CURE Dedicated Server\srcds.exe，运行参数填</p>
+<pre><code>-game cure +exec server +map cbe_bunker -console -port 端口(如27015) -ip 内网IP(如192.168.0.112)
+</code></pre>
+<p>IP必须要填写正确，不然会一直重启</p>
+<p>然后点击确定就行了</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.grmine.cn/post/codename-cure-fu-wu-qi-xin-xi/" class="post-title gt-a-link">
+                    Codename CURE 服务器信息
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: 'DH4dkxf8FA9dX2YL0MOjrKrj-gzGzoHsz',
+		appKey: 'CQK3vp27BWJ9hscdUpyQw25D',
+		avatar: '',
+		pageSize: 5,
+		recordIp: false,
+		placeholder: 'Just Go Go',
+		visitor: false,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first"></div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div>
+        Powered by bytfr
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

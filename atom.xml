@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.grmine.cn</id>
+    <title>GrMine - Blog</title>
+    <updated>2023-02-24T14:03:52.629Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://blog.grmine.cn"/>
+    <link rel="self" href="https://blog.grmine.cn/atom.xml"/>
+    <logo>https://blog.grmine.cn/images/avatar.png</logo>
+    <icon>https://blog.grmine.cn/favicon.ico</icon>
+    <rights>All rights reserved 2023, GrMine - Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Codename CURE 服务器开设教程(Windows 篇)]]></title>
+        <id>https://blog.grmine.cn/post/codename-cure-fu-wu-qi-kai-she-jiao-cheng-windows-pian/</id>
+        <link href="https://blog.grmine.cn/post/codename-cure-fu-wu-qi-kai-she-jiao-cheng-windows-pian/">
+        </link>
+        <updated>2023-02-19T12:11:24.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="安装-codename-cure-服务端">安装 Codename CURE 服务端</h2>
+<h4 id="1-安装steamcmd">1. 安装SteamCMD</h4>
+<p>首先打开 <a href="https://developer.valvesoftware.com/wiki/SteamCMD">SteamCMD - Valve Developer Community (valvesoftware.com)</a></p>
+<p>往下滑找到&quot;Download SteamCMD for Windows&quot;</p>
+<p>点击&quot;[1]&quot;下载SteamCMD</p>
+<figure data-type="image" tabindex="1"><img src="https://download.grmine.cn/d/images/image/image-20230219173024215.png" alt="image-20230219173024215" loading="lazy"></figure>
+<p>如果下载不了可以从我的网盘下：<a href="https://download.grmine.cn/%E5%AE%89%E8%A3%85%E5%8C%85/steamcmd.zip">steamcmd.zip | GrMine - Drive</a></p>
+<p>下载好后，解压到随意路径</p>
+<p>双击打开，等待更新完成</p>
+<figure data-type="image" tabindex="2"><img src="https://download.grmine.cn/d/images/image/QQ%E6%88%AA%E5%9B%BE20230219173214.png" alt="QQ截图20230219173214" loading="lazy"></figure>
+<p>更新完成后，输入</p>
+<pre><code class="language-bash">login anonymous
+</code></pre>
+<p>出现</p>
+<pre><code class="language-bash">Connecting anonymously to Steam Public...OK
+Waiting for client config...OK
+Waiting for user info...OK
+</code></pre>
+<p>代表成功，如果没有请重试</p>
+<h4 id="2-安装游戏服务端">2. 安装游戏服务端</h4>
+<p>输入</p>
+<pre><code class="language-bash">app_update 383410 validata
+</code></pre>
+<p>下载Codename CURE 服务端，出现</p>
+<p>Success! App '383410' fully installed.</p>
+<p>代表完成</p>
+<figure data-type="image" tabindex="3"><img src="https://download.grmine.cn/d/images/image/image-20230219174433935.png" alt="image-20230219174433935" loading="lazy"></figure>
+<h4 id="3-开启服务器">3. 开启服务器</h4>
+<p>打开 SteamCMD根目录\steamapps\common\Codename CURE Dedicated Server</p>
+<p>右键srcds.exe，创建快捷方式</p>
+<figure data-type="image" tabindex="4"><img src="https://download.grmine.cn/d/images/image/image-20230219174709691.png" alt="image-20230219174709691" loading="lazy"></figure>
+<p>右键快捷方式，属性，在&quot;目标&quot;的后面加-game cure</p>
+<figure data-type="image" tabindex="5"><img src="https://download.grmine.cn/d/images/image/QQ%E6%88%AA%E5%9B%BE20230219174908.png" alt="QQ截图20230219174908" loading="lazy"></figure>
+<p>双击打开快捷方式</p>
+<figure data-type="image" tabindex="6"><img src="https://download.grmine.cn/d/images/image/QQ%E6%88%AA%E5%9B%BE20230219175806.png" alt="QQ截图20230219175806" loading="lazy"></figure>
+<p>然后点击开始服务器，让你的好友通过显示的IP地址链接就行（只在有<a href="https://baike.baidu.com/item/%E5%85%AC%E7%BD%91IP/8881123">公网IP</a>或同一网络环境下有用）</p>
+<p>如果在有公网IP环境下开设的服务器，是可以直接在游戏的服务器列表看到的</p>
+<h4 id="4-通过hlsm控制服务器可选但可以使服务器更稳定">4. 通过HLSM控制服务器（可选，但可以使服务器更稳定）</h4>
+<p>首先在 SteamCMD根目录\steamapps\common\Codename CURE Dedicated Server\cure\cfg 下创建一个文件server.cfg</p>
+<p>输入以下内容</p>
+<pre><code>hostname &quot;服务器名&quot;
+
+//局域网
+sv_lan 0
+
+//机器人数（最大3）
+bot_quota 3
+
+//友伤
+mp_friendlyfire 0
+
+//unless freindly fire is disabled there is no way to turn off the new autokick system (introduced to reduce trolling)
+//however you can alter the strikes and cooldown values (within a limited range)
+//you can also set select steamid's to be exempt from being kicked on this server via &quot;kickexemption.txt&quot;
+sv_autokick_strikes 10 //min 5, max 30
+sv_autokick_cooldown 15 //min 10, max 60
+
+//the amount of mins a player should be banned for after being kicked
+//(-1 to turn off 0 for indefinate time)
+sv_kickbantime 5
+
+//the amount of time players have to vote, once it has been called
+sv_votetime 20
+
+//the amount of time players have to wait before calling another vote
+sv_votenext 10
+
+//FastDL
+//sv_downloadurl &quot;http://43.138.213.15:4313/game&quot;
+//sv_allowupload 1
+//sv_allowdownload 1
+
+//allow voting on specific issues
+sv_allowvotekick 0
+sv_allowvotediff 1
+sv_allowvotemap 1
+
+//it is no longer recommended to set difficulty here
+//as on map change it will override any difficulty players have voted for
+
+//send info to master servers
+heartbeat
+
+sv_tags &quot;lv_mod,say_sound,many_map&quot;
+
+//可以使人数多加1个
+tv_enable 1
+tv_enable 0
+</code></pre>
+<p>然后下载HLSM</p>
+<p><a href="https://forums.alliedmods.net/showthread.php?t=147880">HLSM v2.4.1 - HL Server Monitor - AlliedModders (alliedmods.net)</a></p>
+<figure data-type="image" tabindex="7"><img src="https://download.grmine.cn/d/images/image/QQ%E6%88%AA%E5%9B%BE20230219180753.png" alt="QQ截图20230219180753" loading="lazy"></figure>
+<p>如果下载不了可以从我的网盘下：<a href="https://download.grmine.cn/%E5%AE%89%E8%A3%85%E5%8C%85/hlsm2.4.1.zip">hlsm2.4.1.zip | GrMine - Drive</a></p>
+<p>下载完成后解压到一个文件夹，双击打开hlsm.exe，右键空白地方 创建服务器</p>
+<figure data-type="image" tabindex="8"><img src="https://download.grmine.cn/d/images/image/image-20230219200010987.png" alt="image-20230219200010987" loading="lazy"></figure>
+<p>点击浏览</p>
+<figure data-type="image" tabindex="9"><img src="https://download.grmine.cn/d/images/image/image-20230219200115044.png" alt="image-20230219200115044" loading="lazy"></figure>
+<p>选择 SteamCMD根目录\steamapps\common\Codename CURE Dedicated Server\srcds.exe，运行参数填</p>
+<pre><code>-game cure +exec server +map cbe_bunker -console -port 端口(如27015) -ip 内网IP(如192.168.0.112)
+</code></pre>
+<p>IP必须要填写正确，不然会一直重启</p>
+<p>然后点击确定就行了</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Codename CURE 服务器信息]]></title>
+        <id>https://blog.grmine.cn/post/codename-cure-fu-wu-qi-xin-xi/</id>
+        <link href="https://blog.grmine.cn/post/codename-cure-fu-wu-qi-xin-xi/">
+        </link>
+        <updated>2022-10-07T11:37:47.000Z</updated>
+        <content type="html"><![CDATA[<table>
+<thead>
+<tr>
+<th>服务器名字</th>
+<th>IP</th>
+<th>最大玩家数</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>wdnmd1|QQ:744759597</td>
+<td>110.42.148.82:27015</td>
+<td>5</td>
+<td>只有官图</td>
+</tr>
+<tr>
+<td>wdnmd2|QQ:744759597|添加了地图</td>
+<td>43.138.213.15:27015</td>
+<td>6</td>
+<td>添加了其他地图</td>
+</tr>
+</tbody>
+</table>
+<h3 id="更新列表">更新列表</h3>
+<ul>
+<li>
+<p>2022/X/X</p>
+<p>加入了经验等级系统</p>
+</li>
+<li>
+<p>2022/4/3</p>
+<p>加入了&quot;死亡消息&quot;插件</p>
+</li>
+<li>
+<p>2022/4/1</p>
+<p>愚人节快乐(<strong>▽</strong>)</p>
+</li>
+<li>
+<p>2022/3/29</p>
+<p>加入公告插件</p>
+</li>
+</ul>
+<h3 id="关于codename-cure的一些bug">关于Codename CURE的一些bug</h3>
+<ul>
+<li>投票闪退
+<ul>
+<li>在中文简体语言游戏中，在地图或等级投票的时候，容易发生闪退的问题</li>
+<li><strong>解决办法</strong>:</li>
+<li>开发者也在新版本解决</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[赞助]]></title>
+        <id>https://blog.grmine.cn/post/zan-zhu/</id>
+        <link href="https://blog.grmine.cn/post/zan-zhu/">
+        </link>
+        <updated>2022-10-07T11:35:13.000Z</updated>
+        <content type="html"><![CDATA[<p>爱发电：</p>
+<p>https://afdian.net/@bytfr_grmine</p>
+<p>微信收款码<br>
+<img src="http://download.grmine.cn/images/2022/04/03/z7MjCtt9dy/IMG_0855%2820220402-164753%29.JPG" alt="wechat_pay" loading="lazy"></p>
+<p>支付宝收款码<br>
+<img src="http://download.grmine.cn/images/2022/04/03/siWBAYH3TK/IMG_0856%2820220402-164848%29.JPG" alt="alipay" loading="lazy"></p>
+<h1 id="捐赠名单">捐赠名单</h1>
+<p>小目标:133.34(收款码)+80.84(实际86爱发电回扣)=214.18/600 RMB</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>金额(RMB)</th>
+<th>日期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>King Shit</td>
+<td>20</td>
+<td>2022-04-17</td>
+</tr>
+<tr>
+<td>**阳</td>
+<td>100</td>
+<td>2022-04-02</td>
+</tr>
+<tr>
+<td>本(QQ)</td>
+<td>10</td>
+<td>2022-04-28</td>
+</tr>
+<tr>
+<td>*梦</td>
+<td>1</td>
+<td>2020-04-03</td>
+</tr>
+<tr>
+<td>*入</td>
+<td>0.34</td>
+<td>2020-04-05</td>
+</tr>
+<tr>
+<td>你个恶</td>
+<td>5</td>
+<td>2022-03-19</td>
+</tr>
+<tr>
+<td>爱橘美</td>
+<td>15</td>
+<td>2022-02-22</td>
+</tr>
+<tr>
+<td>有人格分裂的路卡利欧</td>
+<td>10</td>
+<td>2022-02-20</td>
+</tr>
+<tr>
+<td>在友谊的失去下</td>
+<td>5</td>
+<td>2022-02-19</td>
+</tr>
+<tr>
+<td>爱发电用户_4JAn</td>
+<td>5</td>
+<td>2022-02-09</td>
+</tr>
+<tr>
+<td>CV</td>
+<td>5</td>
+<td>2022-02-08</td>
+</tr>
+<tr>
+<td>小皮</td>
+<td>5</td>
+<td>2022-03-04</td>
+</tr>
+<tr>
+<td>为什么</td>
+<td>21</td>
+<td>2022-02-01</td>
+</tr>
+<tr>
+<td>爱发电用户_nHDA</td>
+<td>5</td>
+<td>2022-01-24</td>
+</tr>
+<tr>
+<td>哈利</td>
+<td>5</td>
+<td>2022-01-22</td>
+</tr>
+<tr>
+<td>f.</td>
+<td>2</td>
+<td>2020-10-03</td>
+</tr>
+</tbody>
+</table>
+<p>感谢大家的捐赠，捐赠的费用都会用于服务器开发和续费，谢谢支持！</p>
+]]></content>
+    </entry>
+</feed>
